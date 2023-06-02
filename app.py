@@ -21,3 +21,18 @@ if st.button('Say Hello'):  # Returns True if the user clicks the button
 show_df = st.checkbox('Show DataFrame')  # Returns True if the user checks the box, False otherwise
 if show_df:
     st.write(df)
+
+    
+import pandas as pd
+
+# Creating a pandas DataFrame
+data = {
+    'names': ['John', 'Anna', 'George', 'Mia'],
+    'ages': [23, 45, 37, 19]
+}
+df = pd.DataFrame(data)
+
+import streamlit as st
+
+# Display the DataFrame in Streamlit
+st.dataframe(df)
