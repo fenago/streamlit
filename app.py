@@ -39,3 +39,9 @@ st.dataframe(df)
 
 # Display descriptive statistics of 'ages'
 st.write(df['ages'].describe())
+
+# Add 'Adult' column
+df['Adult'] = df['ages'].apply(lambda x: 'Yes' if x >= 18 else 'No')
+
+# Display DataFrame in Streamlit
+st.dataframe(df)
