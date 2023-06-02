@@ -61,3 +61,9 @@ st.text(df.info())
 
 # Show statistical information about the dataset
 st.write(df.describe())
+
+# Select a feature to display histogram
+feature = st.selectbox('Select a feature', df.columns)
+
+# Display histogram
+st.hist(df[feature])
