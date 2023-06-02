@@ -79,3 +79,16 @@ ax.set_ylabel('Frequency')
 
 # Display the plot
 st.pyplot(fig)
+
+
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Select features to display scatter plot
+feature_x = st.selectbox('Select feature for x axis', df.columns)
+feature_y = st.selectbox('Select feature for y axis', df.columns)
+
+# Display scatter plot
+fig, ax = plt.subplots()
+sns.scatterplot(data=df, x=feature_x, y=feature_y, hue=iris.target, ax=ax)
+st.pyplot(fig)
