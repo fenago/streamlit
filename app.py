@@ -45,3 +45,19 @@ df['Adult'] = df['ages'].apply(lambda x: 'Yes' if x >= 18 else 'No')
 
 # Display DataFrame in Streamlit
 st.dataframe(df)
+
+
+from sklearn import datasets
+
+# Load the iris dataset
+iris = datasets.load_iris()
+df = pd.DataFrame(data=iris.data, columns=iris.feature_names)
+
+# Display the DataFrame in Streamlit
+st.dataframe(df)
+
+# Show general information about the dataset
+st.text(df.info())
+
+# Show statistical information about the dataset
+st.write(df.describe())
